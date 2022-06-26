@@ -1,0 +1,35 @@
+#wrap1{
+    .logo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3rem;
+       .bucheon{
+            font-size: 2rem;
+       } 
+       .faSite{
+        position: relative;
+            a.family{
+                display: flex;
+                justify-content: start;
+                border-bottom: 1px solid black;
+                padding: 0 4rem 0 1rem;
+                position: relative;
+                &:after{
+                    content: url(/bucheon/img/family-arrow.svg);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding-right: 1rem;
+
+                }
+            }
+            .faul{
+                position: absolute;
+                top: 100%;
+                left: 0;
+                line-height: 2rem;
+            }
+        }
+    }
+}

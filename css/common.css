@@ -1,0 +1,18 @@
+.ubuntu{
+    font-family: 'Ubuntu', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Hahmlet', serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.d-none{
+    display: none;
+}
