@@ -1,11 +1,16 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 #wrap1 .logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
 }
-#wrap1 .logo .bucheon {
-  font-size: 2rem;
+#wrap1 .logo .bucheon img {
+  width: 40%;
 }
 #wrap1 .logo .faSite {
   position: relative;
@@ -53,14 +58,14 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  transform: translate(-50%, -10%);
+  transform: translate(-50%, -16%);
 }
 .menuWrap .inner .menu {
   padding: 2rem;
 }
 
 .menuWrap .inner.naviStyle {
-  transform: translate(0%, -10%);
+  transform: translate(0%, -16%);
   transition: all 1s;
   background-color: rgb(9, 9, 104);
 }
@@ -119,7 +124,8 @@
 }
 
 .maintext,
-.coreSlide {
+.coreSlide,
+.yesterday {
   margin-bottom: 15rem;
 }
 
@@ -134,7 +140,7 @@
 }
 .coreSlide .fullSlide .imgSlide img {
   width: 100%;
-  border-radius: 30px 30px 0 0;
+  border-radius: 80px 80px 0 0;
 }
 .coreSlide .slidebtn {
   position: relative;
@@ -155,4 +161,44 @@
 }
 .coreSlide .slidebtn .nextBtn {
   transform: translate(200%, 50%) rotate(180deg);
+}
+
+.cover {
+  width: 100vw;
+  display: flex;
+}
+.cover .first,
+.cover .second {
+  display: flex;
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.53);
+}
+.cover .second {
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+
+.yesterday {
+  background-image: url(/bucheon/img/yesterday.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 80px;
+}
+.yesterday .yesText {
+  background-color: rgba(0, 0, 0, 0.448);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  border-radius: 80px;
+}
+.yesterday .yesText p {
+  padding: 5rem 2rem;
+  line-height: 2rem;
+  background-color: rgba(255, 255, 255, 0.615);
+}
+.yesterday .yesText p span {
+  font-size: 1.5rem;
 }
