@@ -117,3 +117,42 @@
 .maintext .swiperWrap .textSwiper .peach {
   width: 40%;
 }
+
+.maintext,
+.coreSlide {
+  margin-bottom: 15rem;
+}
+
+.coreSlide .fullSlide {
+  max-width: 1320px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.coreSlide .fullSlide .imgSlide {
+  display: flex;
+  align-items: center;
+}
+.coreSlide .fullSlide .imgSlide img {
+  width: 100%;
+  border-radius: 30px 30px 0 0;
+}
+.coreSlide .slidebtn {
+  position: relative;
+}
+.coreSlide .slidebtn .prevBtn,
+.coreSlide .slidebtn .nextBtn {
+  position: absolute;
+  line-height: 0;
+  top: 0;
+  right: 50%;
+}
+.coreSlide .slidebtn .prevBtn:before,
+.coreSlide .slidebtn .nextBtn:before {
+  content: url(/bucheon/img/prev.svg);
+}
+.coreSlide .slidebtn .prevBtn {
+  transform: translate(-200%, 50%);
+}
+.coreSlide .slidebtn .nextBtn {
+  transform: translate(200%, 50%) rotate(180deg);
+}
