@@ -1,6 +1,7 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 
 #wrap1 .logo {
@@ -36,21 +37,9 @@ html, body {
   line-height: 2rem;
 }
 
-#trigger {
-  padding: 2rem;
-}
-#trigger li {
-  width: 30px;
-  height: 3px;
-  background-color: black;
-  margin-bottom: 0.8rem;
-}
-#trigger li:nth-of-type(3) {
-  margin-bottom: 0;
-}
-
 .menuWrap {
   position: relative;
+  z-index: 1111;
 }
 .menuWrap .inner {
   position: fixed;
@@ -63,11 +52,53 @@ html, body {
 .menuWrap .inner .menu {
   padding: 2rem;
 }
-
-.menuWrap .inner.naviStyle {
+.menuWrap .inner .menu li {
+  padding: 1rem 0;
+}
+.menuWrap .naviStyle {
   transform: translate(0%, -16%);
   transition: all 1s;
   background-color: rgb(9, 9, 104);
+}
+.menuWrap .naviStyle .menu a {
+  color: white;
+}
+.menuWrap .naviStyle #trigger li {
+  background-color: white;
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+.menuWrap .naviStyle #trigger li:nth-child(1) {
+  transform: translateY(30px) rotate(-45deg);
+}
+.menuWrap .naviStyle #trigger li:nth-child(2) {
+  opacity: 0;
+}
+.menuWrap .naviStyle #trigger li:nth-child(3) {
+  transform: translateY(-10px) rotate(45deg);
+}
+
+#trigger {
+  padding: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+#trigger li {
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  transform: translate(50%, 1000%);
+}
+#trigger li:nth-child(1) {
+  top: 0;
+}
+#trigger li:nth-child(2) {
+  top: 20px;
+}
+#trigger li:nth-child(3) {
+  top: 40px;
 }
 
 .quick {
@@ -122,10 +153,20 @@ html, body {
 .maintext .swiperWrap .textSwiper .peach {
   width: 40%;
 }
+.maintext .buchon {
+  display: flex;
+}
+.maintext .buchon img {
+  transform: scaleX(-1) rotate(136deg);
+  cursor: pointer;
+}
+.maintext .buchon img:hover {
+  transform: scaleX(-1) rotate(136deg) translate(10%, 30%);
+  transition: all 0.3s;
+}
 
 .maintext,
-.coreSlide,
-.yesterday {
+.coreSlide {
   margin-bottom: 15rem;
 }
 
@@ -163,22 +204,45 @@ html, body {
   transform: translate(200%, 50%) rotate(180deg);
 }
 
-.cover {
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 6rem 0;
+  background-color: #4b56cb;
+  width: 100%;
+  display: none;
+}
+#popup .closeBtn {
+  position: relative;
+  width: 100%;
+}
+#popup .closeBtn span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 3px;
+  background-color: white;
+  cursor: pointer;
+}
+#popup .closeBtn span:nth-child(1) {
+  transform: translate(-100%, -1000%) rotate(45deg);
+}
+#popup .closeBtn span:nth-child(2) {
+  transform: translate(-100%, -1000%) rotate(-45deg);
+}
+#popup .cover {
   width: 100vw;
   display: flex;
+  transform: rotate(10deg);
 }
-.cover .first,
-.cover .second {
+#popup .cover .first {
   display: flex;
   font-size: 3rem;
   color: rgba(0, 0, 0, 0.53);
 }
-.cover .second {
-  white-space: nowrap;
-  justify-content: flex-end;
-}
-
-.yesterday {
+#popup .yesterday {
   background-image: url(/bucheon/img/yesterday.jpg);
   background-size: 100%;
   background-position: center;
@@ -186,7 +250,7 @@ html, body {
   width: 100%;
   border-radius: 80px;
 }
-.yesterday .yesText {
+#popup .yesterday .yesText {
   background-color: rgba(0, 0, 0, 0.448);
   width: 100%;
   height: 100%;
@@ -194,11 +258,12 @@ html, body {
   justify-content: end;
   border-radius: 80px;
 }
-.yesterday .yesText p {
+#popup .yesterday .yesText p {
   padding: 5rem 2rem;
   line-height: 2rem;
   background-color: rgba(255, 255, 255, 0.615);
+  border-radius: 0 80px 80px 0;
 }
-.yesterday .yesText p span {
+#popup .yesterday .yesText p span {
   font-size: 1.5rem;
 }

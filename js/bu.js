@@ -31,12 +31,11 @@
     trigger.addEventListener('click', function(){
         inner.classList.toggle('naviStyle');
     })
+    
 
 //이미지 슬라이드
     let img = document.querySelector(".imgSlide > img");
     width = img.width;
-    let forlength = document.querySelectorAll(".imgSlide > img");
-    length = forlength.length
     let curPos = 0;
     let postion = 0;
     let prevBtn = document.querySelector(".prevBtn")
@@ -147,6 +146,15 @@
     window.addEventListener('scroll', scrollHandler)
     animate()
 
+//모달팝업
+    let popupBtn = document.querySelector('.imgWrap')
+    let popup = document.querySelector('#popup')
+    let closeBtn = document.querySelector('.closeBtn')
 
-
+    popupBtn.addEventListener("click", e => {
+        popup.style.display = "block"
+    })
+    closeBtn.addEventListener("click", e => {
+        popup.style.display = "none"
+    })
 
