@@ -139,9 +139,13 @@ html, body {
 .maintext .swiperWrap .textSwiper li {
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  transform: translate(30%, 30%);
 }
 .maintext .swiperWrap .textSwiper .slideText {
   font-size: 3rem;
@@ -166,7 +170,8 @@ html, body {
 }
 
 .maintext,
-.coreSlide {
+.coreSlide,
+.tabWrap {
   margin-bottom: 15rem;
 }
 
@@ -266,4 +271,70 @@ html, body {
 }
 #popup .yesterday .yesText p span {
   font-size: 1.5rem;
+}
+
+.tabWrap {
+  padding-bottom: 60%;
+}
+.tabWrap .tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.tabWrap .tab .food,
+.tabWrap .tab .cafe,
+.tabWrap .tab .place {
+  position: relative;
+}
+.tabWrap .tab .food h2,
+.tabWrap .tab .cafe h2,
+.tabWrap .tab .place h2 {
+  padding: 1rem;
+  cursor: pointer;
+}
+.tabWrap .tab .food .abs,
+.tabWrap .tab .cafe .abs,
+.tabWrap .tab .place .abs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 5rem;
+  color: rgba(75, 86, 203, 0.1529411765);
+  transform: translateY(-30%);
+}
+.tabWrap .tab .food .ulWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(20%);
+  display: grid;
+  grid-template-columns: repeat(3, 285px);
+  grid-template-rows: repeat(2, 285px);
+  -moz-column-gap: 100px;
+       column-gap: 100px;
+  row-gap: 180px;
+}
+.tabWrap .tab .food .ulWrap .d1ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tabWrap .tab .food .ulWrap .d1ul .d1li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.tabWrap .tab .food .ulWrap .d1ul .d1li img {
+  width: 100%;
+  border-radius: 50%;
+}
+.tabWrap .tab .food .ulWrap .d1ul .tabText {
+  position: relative;
+  margin-top: 18rem;
+  text-align: center;
 }
