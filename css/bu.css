@@ -282,16 +282,13 @@ html, body {
   justify-content: space-around;
   position: relative;
 }
-.tabWrap .tab .food,
-.tabWrap .tab .cafe,
-.tabWrap .tab .place {
-  position: relative;
-}
 .tabWrap .tab .food h2,
 .tabWrap .tab .cafe h2,
 .tabWrap .tab .place h2 {
   padding: 1rem;
   cursor: pointer;
+  position: relative;
+  z-index: 11;
 }
 .tabWrap .tab .food .abs,
 .tabWrap .tab .cafe .abs,
@@ -300,41 +297,64 @@ html, body {
   top: 0;
   left: 0;
   right: 0;
-  font-size: 5rem;
-  color: rgba(75, 86, 203, 0.1529411765);
-  transform: translateY(-30%);
+  font-size: 20rem;
+  color: rgba(75, 86, 203, 0.0980392157);
+  transform: translate(215%, 60%);
 }
-.tabWrap .tab .food .ulWrap {
+.tabWrap .tab .food .ulWrap,
+.tabWrap .tab .cafe .ulWrap,
+.tabWrap .tab .place .ulWrap {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   transform: translateY(20%);
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 285px);
   grid-template-rows: repeat(2, 285px);
   -moz-column-gap: 100px;
        column-gap: 100px;
   row-gap: 180px;
+  justify-content: center;
 }
-.tabWrap .tab .food .ulWrap .d1ul {
+.tabWrap .tab .food .ulWrap .d1ul,
+.tabWrap .tab .cafe .ulWrap .d1ul,
+.tabWrap .tab .place .ulWrap .d1ul {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.tabWrap .tab .food .ulWrap .d1ul .d1li {
+.tabWrap .tab .food .ulWrap .d1ul .d1li,
+.tabWrap .tab .cafe .ulWrap .d1ul .d1li,
+.tabWrap .tab .place .ulWrap .d1ul .d1li {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
-.tabWrap .tab .food .ulWrap .d1ul .d1li img {
+.tabWrap .tab .food .ulWrap .d1ul .d1li img,
+.tabWrap .tab .cafe .ulWrap .d1ul .d1li img,
+.tabWrap .tab .place .ulWrap .d1ul .d1li img {
   width: 100%;
   border-radius: 50%;
 }
-.tabWrap .tab .food .ulWrap .d1ul .tabText {
+.tabWrap .tab .food .ulWrap .d1ul .tabText,
+.tabWrap .tab .cafe .ulWrap .d1ul .tabText,
+.tabWrap .tab .place .ulWrap .d1ul .tabText {
   position: relative;
   margin-top: 18rem;
   text-align: center;
+}
+.tabWrap .tab .cafe .ulWrap,
+.tabWrap .tab .place .ulWrap {
+  grid-template-columns: repeat(2, 285px);
+  grid-template-rows: repeat(2, 285px);
+}
+.tabWrap .tab .tablist.active .tabBtn {
+  background-color: #4b56cb;
+  color: white;
+}
+.tabWrap .tab .tablist.active .ulWrap {
+  display: grid;
 }

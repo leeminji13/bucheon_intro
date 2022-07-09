@@ -291,33 +291,33 @@ html, body{
         .food,
         .cafe,
         .place{
-            position: relative;
             h2{
                 padding: 1rem;
                 cursor: pointer;
+                position: relative;
+                z-index: 11;
             }
             .abs{
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
-                font-size: 5rem;
-                color: #4b56cb27;
-                transform: translateY(-30%);
+                font-size: 20rem;
+                color: #4b56cb19;
+                transform: translate(215%,60%);
             }
-        }
-        .food{
             .ulWrap{
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
                 transform: translateY(20%);
-                display: grid;
+                display: none;
                 grid-template-columns: repeat(3, 285px);
 	            grid-template-rows: repeat(2, 285px);
                 column-gap: 100px;
 	            row-gap: 180px;
+                justify-content: center;
                 .d1ul{
                     position: relative;
                     display: flex;
@@ -341,6 +341,23 @@ html, body{
                 }
             }
         }
+        .cafe,
+        .place{
+            .ulWrap{
+                grid-template-columns: repeat(2, 285px);
+                grid-template-rows: repeat(2, 285px);
+            }
+        }
+        .tablist.active{
+            .tabBtn{
+                background-color: #4b56cb;
+                color: white;
+            }
+            .ulWrap{
+                display: grid;
+            }
+        }
+
     }
 }
 

@@ -138,6 +138,20 @@
     closeBtn.addEventListener("click", e => {
         popup.style.display = "none"
     })
+    
+//tab메뉴
+const tabList = document.querySelectorAll('.tablist');
+for(var i = 0; i < tabList.length; i++){
+  tabList[i].querySelector('.tabBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    for(var j = 0; j < tabList.length; j++){
+      tabList[j].classList.remove('active');
+    }
+    this.parentNode.classList.add('active');
+  });
+}
+
+
 //tab메뉴 mouseover애니메이션
     // let current2 = 0; //li 위치를 나타내는 변수
     // textAni(); //기본 첫 번째 li를 보여줌
